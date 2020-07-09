@@ -10,8 +10,10 @@ const project = (title) => {
     projectList.splice(index, 1);
   };
 
+  const getProjecList = () => projectList;
+
   return {
-    getTitle, addTodo, removeTodo,
+    getTitle, addTodo, removeTodo, getProjecList,
   };
 };
 
