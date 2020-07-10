@@ -7,6 +7,15 @@ const renderLayout = () => {
   header.appendChild(titlePage);
 
   titlePage.textContent = 'ToDo APP';
+
+  const leftMenu = document.createElement('div');
+  leftMenu.classList.add('left-menu');
+  const leftTitle = document.createElement('h2');
+  leftTitle.textContent = 'Projects';
+
+  content.appendChild(leftMenu);
+  leftMenu.appendChild(leftTitle);
+
 };
 
 export default renderLayout;
