@@ -9,7 +9,7 @@ const renderLayout = () => {
   titlePage.textContent = 'ToDo APP';
 
   const container = document.createElement('div');
-  container.classList.add('container', 'd-flex');
+  container.classList.add('main-container', 'd-flex');
   content.appendChild(container);
 
   const leftMenu = document.createElement('div');
