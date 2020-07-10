@@ -5,6 +5,8 @@ const renderLayout = () => {
 
   content.appendChild(header);
   header.appendChild(titlePage);
+
+  titlePage.textContent = 'ToDo APP';
 };
 
 export default renderLayout;
