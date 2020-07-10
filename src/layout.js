@@ -8,14 +8,25 @@ const renderLayout = () => {
 
   titlePage.textContent = 'ToDo APP';
 
+  const container = document.createElement('div');
+  container.classList.add('container', 'd-flex');
+  content.appendChild(container);
+
   const leftMenu = document.createElement('div');
   leftMenu.classList.add('left-menu');
   const leftTitle = document.createElement('h2');
   leftTitle.textContent = 'Projects';
 
-  content.appendChild(leftMenu);
+  container.appendChild(leftMenu);
   leftMenu.appendChild(leftTitle);
 
+  const todoContent = document.createElement('div');
+  todoContent.classList.add('todo-content');
+  const todoTitle = document.createElement('h2');
+  todoTitle.textContent = 'Project Selected';
+
+  container.appendChild(todoContent);
+  todoContent.appendChild(todoTitle);
 };
 
 export default renderLayout;

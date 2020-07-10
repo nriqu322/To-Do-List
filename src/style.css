@@ -20,8 +20,18 @@ h1 {
   margin-bottom: 0;
 }
 
-.left-menu {
-  background-color: blue;
-  width: 30%;
+.container {
+  margin-left: 0;
+  margin-right: 0;
   font-family: Helvetica, sans-serif;
+}
+
+.left-menu {
+  background-color: lightskyblue;
+  width: 30%;
+}
+
+.todo-content {
+  background-color: lightcoral;
+  width: 70%;
 }
