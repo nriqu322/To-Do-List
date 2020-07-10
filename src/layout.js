@@ -1,3 +1,5 @@
+import project from "./projects";
+
 const renderLayout = () => {
   const content = document.querySelector('#content');
   const header = document.createElement('header');
@@ -19,6 +21,12 @@ const renderLayout = () => {
 
   container.appendChild(leftMenu);
   leftMenu.appendChild(leftTitle);
+
+  // const projectList = document.createElement('div');
+  // projectList.classList.add('project-list');
+  // const newProject = project('project1');
+  // const newProject2 = project('project2');
+  // projectList.textContent = project.projectList;
 
   const todoContent = document.createElement('div');
   todoContent.classList.add('todo-content');

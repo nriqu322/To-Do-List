@@ -1,19 +1,19 @@
 const project = (title) => {
   const getTitle = () => title;
-  const projectList = [];
+  const todoList = [];
 
   const addTodo = (todo) => {
-    projectList.push(todo);
+    todoList.push(todo);
   };
 
   const removeTodo = (index) => {
-    projectList.splice(index, 1);
+    todoList.splice(index, 1);
   };
 
-  const getProjecList = () => projectList;
+  const getTodoList = () => todoList;
 
   return {
-    getTitle, addTodo, removeTodo, getProjecList,
+    getTitle, addTodo, removeTodo, getTodoList,
   };
 };
 
