@@ -1,12 +1,12 @@
-const { default: project } = require("./projects");
+import { project, projectList } from './projects';
 
-const createTodo = (project) => {
+// const createTodo = (project) => {
 
-};
-
-const projectList = [];
+// };
 
 const createProject = (title) => {
-  const project = project(title);
-  projectList.push(project);
+  const newProject = project(title);
+  projectList.push(newProject);
 };
+
+export default createProject;

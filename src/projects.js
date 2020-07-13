@@ -1,5 +1,7 @@
+const projectList = [];
+
 const project = (title) => {
-  const getTitle = () => title;
+  // const getTitle = () => title;
   const todoList = [];
 
   const addTodo = (todo) => {
@@ -13,8 +15,23 @@ const project = (title) => {
   const getTodoList = () => todoList;
 
   return {
-    getTitle, addTodo, removeTodo, getTodoList,
+    title, addTodo, removeTodo, getTodoList,
   };
 };
 
-export default project;
+export { project, projectList };
+
+// class Project {
+//   constructor(title) {
+//     this.title = title;
+//     this.todoList = [];
+//   }
+
+//   addTodo(todo) {
+//     this.todoList.push(todo);
+//   }
+
+//   removeTodo(index) {
+//     this.todoList.splice(index, 1);
+//   }
+// }

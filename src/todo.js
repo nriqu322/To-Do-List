@@ -3,7 +3,7 @@ const todo = (title, description, dueDate, priority) => {
   const getDescription = () => description;
   const getDueDate = () => dueDate;
   const getPriority = () => priority;
-  let isCheked = false;
+  const isCheked = false;
 
   return {
     getTitle, getDescription, getDueDate, getPriority, isCheked,

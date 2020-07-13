@@ -1,4 +1,4 @@
-import project from "./projects";
+// import project from "./projects";
 
 const renderLayout = () => {
   const content = document.querySelector('#content');
