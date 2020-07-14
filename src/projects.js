@@ -1,4 +1,4 @@
-const projectList = [];
+// const projectList = [];
 
 const project = (title) => {
   // const getTitle = () => title;
@@ -19,7 +19,7 @@ const project = (title) => {
   };
 };
 
-export { project, projectList };
+export default project;
 
 // class Project {
 //   constructor(title) {

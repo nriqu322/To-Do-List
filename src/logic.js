@@ -1,12 +1,13 @@
-import { project, projectList } from './projects';
+import project from './projects';
 
 // const createTodo = (project) => {
 
 // };
+const projectList = [];
 
 const createProject = (title) => {
   const newProject = project(title);
   projectList.push(newProject);
 };
 
-export default createProject;
+export { createProject, projectList };

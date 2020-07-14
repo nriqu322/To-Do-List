@@ -1,5 +1,4 @@
-import projectList from './projects';
-// import createProject from './logic';
+import { createProject, projectList } from './logic';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -7,19 +6,17 @@ const renderProjects = () => {
   projectListCont.classList.add('project-list');
   leftMenu.appendChild(projectListCont);
 
-  // projectList.forEach((proj) => {
-  //   proj = document.createElement('div');
-  //   proj.classList.add('project');
-  //   proj.textContent = proj.getTitle();
-  //   projectListCont.appendChild(proj);
-  // });
+  createProject('Home');
+  createProject('Groceries');
+  createProject('School');
 
-  for (let i; i < projectList.length; i += 1) {
-    const proj = document.createElement('div');
-    proj.classList.add('project');
-    proj.textContent = projectList[i].title;
-    projectListCont.appendChild(proj);
-  }
+  projectList.forEach((proj) => {
+    const project = document.createElement('div');
+    project.classList.add('project');
+    project.textContent = proj.title;
+    projectListCont.appendChild(project);
+  });
+
 };
 
 export default renderProjects;
