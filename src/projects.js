@@ -20,18 +20,3 @@ const project = (title) => {
 };
 
 export default project;
-
-// class Project {
-//   constructor(title) {
-//     this.title = title;
-//     this.todoList = [];
-//   }
-
-//   addTodo(todo) {
-//     this.todoList.push(todo);
-//   }
-
-//   removeTodo(index) {
-//     this.todoList.splice(index, 1);
-//   }
-// }

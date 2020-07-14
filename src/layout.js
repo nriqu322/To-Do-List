@@ -36,6 +36,17 @@ const renderLayout = () => {
 
   container.appendChild(todoContent);
   todoContent.appendChild(todoTitle);
+
+  const newProjectCont = document.createElement('div');
+  newProjectCont.classList.add('new-project-container');
+  leftMenu.appendChild(newProjectCont);
+
+  const newProject = document.createElement('input');
+  newProject.classList.add('new-project', 'form-control');
+  newProject.id = 'new-project';
+  newProject.setAttribute('type', 'text');
+  newProject.placeholder = 'Add New Project';
+  newProjectCont.appendChild(newProject);
 };
 
 export default renderLayout;

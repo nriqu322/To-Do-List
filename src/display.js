@@ -16,7 +16,6 @@ const renderProjects = () => {
     project.textContent = proj.title;
     projectListCont.appendChild(project);
   });
-
 };
 
 export default renderProjects;
