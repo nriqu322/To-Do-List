@@ -1,5 +1,3 @@
-// const projectList = [];
-
 const project = (title) => {
   // const getTitle = () => title;
   const todoList = [];

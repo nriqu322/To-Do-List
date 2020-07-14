@@ -1,4 +1,4 @@
-import { createProject, projectList } from './logic';
+import { projectList } from './logic';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');

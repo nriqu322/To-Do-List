@@ -1,8 +1,11 @@
 import project from './projects';
+import todo from './todo';
 
-// const createTodo = (project) => {
+const createTodo = (title, description, dueDate, priority, project) => {
+  const newTodo = todo(title, description, dueDate, priority);
+  project.addTodo(newTodo);
+};
 
-// };
 const projectList = [];
 
 const createProject = (title) => {
@@ -10,4 +13,4 @@ const createProject = (title) => {
   projectList.push(newProject);
 };
 
-export { createProject, projectList };
+export { createTodo, createProject, projectList };
