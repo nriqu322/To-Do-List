@@ -23,12 +23,6 @@ const renderLayout = () => {
   container.appendChild(leftMenu);
   leftMenu.appendChild(leftTitle);
 
-  // const projectList = document.createElement('div');
-  // projectList.classList.add('project-list');
-  // const newProject = project('project1');
-  // const newProject2 = project('project2');
-  // projectList.textContent = project.projectList;
-
   const todoContent = document.createElement('div');
   todoContent.classList.add('todo-content');
   const todoTitle = document.createElement('h2');
@@ -38,7 +32,7 @@ const renderLayout = () => {
   todoContent.appendChild(todoTitle);
 
   const newProjectCont = document.createElement('div');
-  newProjectCont.classList.add('new-project-container');
+  newProjectCont.classList.add('new-project-container', 'd-flex');
   leftMenu.appendChild(newProjectCont);
 
   const newProject = document.createElement('input');
@@ -47,6 +41,12 @@ const renderLayout = () => {
   newProject.setAttribute('type', 'text');
   newProject.placeholder = 'Add New Project';
   newProjectCont.appendChild(newProject);
+
+  const addProjectBtn = document.createElement('button');
+  addProjectBtn.classList.add('add-project-btn', 'btn-success', 'px-3');
+  addProjectBtn.id = 'add-project-btn';
+  addProjectBtn.textContent = '+';
+  newProjectCont.appendChild(addProjectBtn);
 };
 
 export default renderLayout;

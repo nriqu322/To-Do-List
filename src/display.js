@@ -6,10 +6,6 @@ const renderProjects = () => {
   projectListCont.classList.add('project-list');
   leftMenu.appendChild(projectListCont);
 
-  createProject('Home');
-  createProject('Groceries');
-  createProject('School');
-
   projectList.forEach((proj) => {
     const project = document.createElement('div');
     project.classList.add('project');
