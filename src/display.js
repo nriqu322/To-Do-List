@@ -1,4 +1,5 @@
 import { projectList } from './logic';
+import project from './projects';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -7,11 +8,33 @@ const renderProjects = () => {
   leftMenu.appendChild(projectListCont);
 
   projectList.forEach((proj) => {
-    const project = document.createElement('div');
-    project.classList.add('project');
-    project.textContent = proj.title;
-    projectListCont.appendChild(project);
+    const projct = document.createElement('div');
+    projct.classList.add('project');
+    // projct.id = proj.id();
+    projct.textContent = proj.title;
+    projectListCont.appendChild(projct);
   });
 };
 
-export default renderProjects;
+const renderTodos = () => {
+  const todoContainer = document.querySelector('.todo-container');
+  const todoListCont = document.createElement('div');
+  todoListCont.classList.add('todo-list');
+  todoContainer.appendChild(todoListCont);
+
+  const todoList = project.getTodoList();
+
+  todoList.forEach((todo) => {
+    const [todoTitl, todoDesc, todoDate, todoPriority] = todo;
+    console.log(todoTitl);
+    console.log(todoDesc);
+    console.log(todoDate);
+    console.log(todoPriority);
+    const todoTitle = document.createElement('div');
+    todoTitle.classList.add('todo-item');
+    todoTitle.textContent = todoTitl;
+    todoListCont.appendChild(todoTitle);
+  });
+};
+
+export { renderProjects, renderTodos };

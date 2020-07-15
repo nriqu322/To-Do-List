@@ -23,13 +23,13 @@ const renderLayout = () => {
   container.appendChild(leftMenu);
   leftMenu.appendChild(leftTitle);
 
-  const todoContent = document.createElement('div');
-  todoContent.classList.add('todo-content');
+  const todoContainer = document.createElement('div');
+  todoContainer.classList.add('todo-container');
   const todoTitle = document.createElement('h2');
   todoTitle.textContent = 'Project Selected';
 
-  container.appendChild(todoContent);
-  todoContent.appendChild(todoTitle);
+  container.appendChild(todoContainer);
+  todoContainer.appendChild(todoTitle);
 
   const newProjectCont = document.createElement('div');
   newProjectCont.classList.add('new-project-container', 'd-flex');

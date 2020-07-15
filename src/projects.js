@@ -2,6 +2,8 @@ const project = (title) => {
   // const getTitle = () => title;
   const todoList = [];
 
+  const id = () => Date.now().toString();
+
   const addTodo = (todo) => {
     todoList.push(todo);
   };
@@ -13,7 +15,7 @@ const project = (title) => {
   const getTodoList = () => todoList;
 
   return {
-    title, addTodo, removeTodo, getTodoList,
+    title, id, addTodo, removeTodo, getTodoList,
   };
 };
 

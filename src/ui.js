@@ -1,5 +1,5 @@
 import { createProject } from './logic';
-import renderProjects from './display';
+import { renderProjects } from './display';
 
 const addProject = () => {
   const inputProject = document.getElementById('new-project');
