@@ -33,3 +33,8 @@ h1 {
   background-color: lightcoral;
   width: 65%;
 }
+
+.active-project {
+  font-weight: bold;
+  color: yellow;
+}

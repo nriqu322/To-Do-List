@@ -2,11 +2,9 @@ const project = (title) => {
   // const getTitle = () => title;
   const todoList = [];
 
-  const id = () => Date.now().toString();
+  const id = Date.now().toString();
 
-  const addTodo = (todo) => {
-    todoList.push(todo);
-  };
+  const addTodo = (todo) => todoList.push(todo);
 
   const removeTodo = (index) => {
     todoList.splice(index, 1);

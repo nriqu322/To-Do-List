@@ -25,4 +25,24 @@ const addProject = () => {
   });
 };
 
-export default addProject;
+// const STORAGE_SELECT_KEY = 'project.listSelected';
+// let projectIdSelected = JSON.parse(localStorage.getItem(STORAGE_SELECT_KEY));
+
+const selectProject = () => {
+  const projectListCont = document.querySelector('.project-list');
+  projectListCont.addEventListener('click', (e) => {
+    const getProject = document.querySelectorAll('.project');
+    getProject.forEach((item) => {
+      item.classList.remove('active-project');
+    });
+    if (e.target.tagName.toLowerCase() === 'li') {
+      const { id } = e.target;
+      // projectIdSelected = e.target.id;
+      const addClass = document.getElementById(id);
+      addClass.classList.add('active-project');
+    }
+    // localStorage.setItem(STORAGE_SELECT_KEY, JSON.stringify(projectIdSelected));
+  });
+};
+
+export { addProject, selectProject };

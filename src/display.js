@@ -8,9 +8,9 @@ const renderProjects = () => {
   leftMenu.appendChild(projectListCont);
 
   projectList.forEach((proj) => {
-    const projct = document.createElement('div');
+    const projct = document.createElement('li');
     projct.classList.add('project');
-    // projct.id = proj.id();
+    projct.id = proj.id;
     projct.textContent = proj.title;
     projectListCont.appendChild(projct);
   });
@@ -26,10 +26,6 @@ const renderTodos = () => {
 
   todoList.forEach((todo) => {
     const [todoTitl, todoDesc, todoDate, todoPriority] = todo;
-    console.log(todoTitl);
-    console.log(todoDesc);
-    console.log(todoDate);
-    console.log(todoPriority);
     const todoTitle = document.createElement('div');
     todoTitle.classList.add('todo-item');
     todoTitle.textContent = todoTitl;
