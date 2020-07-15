@@ -1,12 +1,12 @@
 import './style.css';
 import renderLayout from './layout';
 import { renderProjects, renderTodos } from './display';
-import { createProject, removeProject/* , createTodo */ } from './logic';
+import { createProject, removeProject, /* , createTodo */ projectList } from './logic';
 import { addProject, selectProject } from './ui';
 
 renderLayout();
 
-if (localStorage.length === 0) {
+if (projectList.length === 0) {
   createProject('My First Project');
   // createProject('Groceries');
   // createProject('School');

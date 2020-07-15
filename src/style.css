@@ -34,6 +34,10 @@ h1 {
   width: 65%;
 }
 
+li {
+  list-style: none;
+}
+
 .active-project {
   font-weight: bold;
   color: yellow;
