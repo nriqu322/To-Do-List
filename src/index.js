@@ -1,7 +1,7 @@
 import './style.css';
 import renderLayout from './layout';
 import { renderProjects, renderTodos } from './display';
-import { createProject/* , createTodo */ } from './logic';
+import { createProject, removeProject/* , createTodo */ } from './logic';
 import { addProject, selectProject } from './ui';
 
 renderLayout();
@@ -13,8 +13,10 @@ if (localStorage.length === 0) {
 }
 
 renderProjects();
-addProject();
 selectProject();
+addProject();
+
+removeProject();
 
 // createTodo('Create a Project', 'Type the name of the new project on the left pane and press enter or button', new Date(), 'high', 'My First Project');
 // createTodo('Create a new Task', 'Click on the add button and fill the form', new Date(), 'high', 'My First Project');

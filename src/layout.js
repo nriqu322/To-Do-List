@@ -47,6 +47,11 @@ const renderLayout = () => {
   addProjectBtn.id = 'add-project-btn';
   addProjectBtn.textContent = '+';
   newProjectCont.appendChild(addProjectBtn);
+
+  const deleteProjectBtn = document.createElement('button');
+  deleteProjectBtn.classList.add('delete-btn', 'btn', 'btn-danger');
+  deleteProjectBtn.textContent = 'DELETE';
+  leftMenu.appendChild(deleteProjectBtn);
 };
 
 export default renderLayout;
