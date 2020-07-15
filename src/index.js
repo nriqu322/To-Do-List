@@ -6,9 +6,11 @@ import addProject from './ui';
 
 renderLayout();
 
-createProject('My First Project');
-createProject('Groceries');
-createProject('School');
+if (localStorage === '') {
+  createProject('My First Project');
+  // createProject('Groceries');
+  // createProject('School');
+}
 
 renderProjects();
 addProject();
