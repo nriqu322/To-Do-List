@@ -1,5 +1,4 @@
 import project from './projects';
-import { renderProjects } from './display';
 // import todo from './todo';
 
 const STORAGE_KEY = 'project.list';
