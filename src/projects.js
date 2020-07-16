@@ -13,7 +13,7 @@ const Project = (title) => {
   const getTodoList = () => todoList;
 
   return {
-    title, id, addTodo, removeTodo, getTodoList,
+    title, id, addTodo, removeTodo, getTodoList, todoList,
   };
 };
 

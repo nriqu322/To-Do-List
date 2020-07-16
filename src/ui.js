@@ -1,9 +1,9 @@
-import { createProject } from './logic';
+import { createProject, createTodo } from './logic';
 import { renderProjects, renderTodos } from './display';
 
 // const STORAGE_SELECT_KEY = 'project.listSelected';
 // let projectIdSelected = JSON.parse(localStorage.getItem(STORAGE_SELECT_KEY));
-let projectIdSelected;
+// let projectIdSelected;
 
 const selectProject = () => {
   const projectListCont = document.querySelector('.project-list');
@@ -14,8 +14,8 @@ const selectProject = () => {
     });
     if (e.target.tagName.toLowerCase() === 'li') {
       const { id } = e.target;
-      projectIdSelected = e.target.id;
-      console.log(projectIdSelected);
+      // projectIdSelected = e.target.id;
+      // console.log(projectIdSelected);
       const addClass = document.getElementById(id);
       addClass.classList.add('active-project');
       renderTodos();
@@ -50,4 +50,28 @@ const addProject = () => {
   });
 };
 
-export { addProject, selectProject };
+const addTodo = () => {
+  const inputTodo = document.getElementById('new-todo');
+  inputTodo.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      if (inputTodo.value !== '') {
+        document.querySelector('.todo-list').remove();
+        createTodo(inputTodo.value);
+        inputTodo.value = '';
+        renderTodos();
+      }
+    }
+  });
+
+  // const addBtnTodo = document.getElementById('add-todo-btn');
+  // addBtnTodo.addEventListener('click', () => {
+  //   if (inputTodo.value !== '') {
+  //     document.querySelector('.todo-list').remove();
+  //     createTodo(inputTodo.value);
+  //     inputTodo.value = '';
+  //     renderProjects();
+  //   }
+  // });
+};
+
+export { addProject, selectProject, addTodo };
