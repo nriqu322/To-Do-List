@@ -16,21 +16,35 @@ const renderProjects = () => {
   });
 };
 
+const clearElement = (element) => {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+};
+
 const renderTodos = () => {
   const todoContainer = document.querySelector('.todo-container');
-  const todoListCont = document.createElement('div');
-  todoListCont.classList.add('todo-list');
-  todoContainer.appendChild(todoListCont);
+  clearElement(todoContainer);
+  const activeProject = document.querySelector('.active-project');
+  console.log(activeProject.innerHTML);
+  const titleProject = document.createElement('h2');
+  titleProject.classList.add('title-project');
+  titleProject.textContent = activeProject.textContent;
+  todoContainer.appendChild(titleProject);
 
-  const todoList = project.getTodoList();
+  // const todoListCont = document.createElement('div');
+  // todoListCont.classList.add('todo-list');
+  // todoContainer.appendChild(todoListCont);
 
-  todoList.forEach((todo) => {
-    const [todoTitl, todoDesc, todoDate, todoPriority] = todo;
-    const todoTitle = document.createElement('div');
-    todoTitle.classList.add('todo-item');
-    todoTitle.textContent = todoTitl;
-    todoListCont.appendChild(todoTitle);
-  });
+  // const todoList = project.getTodoList();
+
+  // todoList.forEach((todo) => {
+  //   const [todoTitl, todoDesc, todoDate, todoPriority] = todo;
+  //   const todoTitle = document.createElement('div');
+  //   todoTitle.classList.add('todo-item');
+  //   todoTitle.textContent = todoTitl;
+  //   todoListCont.appendChild(todoTitle);
+  // });
 };
 
 export { renderProjects, renderTodos };

@@ -1,5 +1,5 @@
 import { createProject } from './logic';
-import { renderProjects } from './display';
+import { renderProjects, renderTodos } from './display';
 
 const selectProject = () => {
   const projectListCont = document.querySelector('.project-list');
@@ -13,6 +13,7 @@ const selectProject = () => {
       // projectIdSelected = e.target.id;
       const addClass = document.getElementById(id);
       addClass.classList.add('active-project');
+      renderTodos();
     }
     // localStorage.setItem(STORAGE_SELECT_KEY, JSON.stringify(projectIdSelected));
   });
