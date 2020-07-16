@@ -26,8 +26,8 @@ const renderTodos = () => {
   const todoContainer = document.querySelector('.todo-container');
   clearElement(todoContainer);
   const activeProject = document.querySelector('.active-project');
-  console.log(activeProject.id);
-  console.log(activeProject.textContent);
+  // console.log(activeProject.id);
+  // console.log(activeProject.textContent);
   const titleProject = document.createElement('h2');
   titleProject.classList.add('title-project');
   titleProject.textContent = activeProject.textContent;

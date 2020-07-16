@@ -23,14 +23,6 @@ const renderLayout = () => {
   container.appendChild(leftMenu);
   leftMenu.appendChild(leftTitle);
 
-  const todoContainer = document.createElement('div');
-  todoContainer.classList.add('todo-container');
-  const todoTitle = document.createElement('div');
-  todoTitle.textContent = 'Select a project or create a new one';
-
-  container.appendChild(todoContainer);
-  todoContainer.appendChild(todoTitle);
-
   const newProjectCont = document.createElement('div');
   newProjectCont.classList.add('new-project-container', 'd-flex');
   leftMenu.appendChild(newProjectCont);
@@ -52,6 +44,56 @@ const renderLayout = () => {
   deleteProjectBtn.classList.add('delete-btn', 'btn', 'btn-danger');
   deleteProjectBtn.textContent = 'DELETE';
   leftMenu.appendChild(deleteProjectBtn);
+
+  const todoContainer = document.createElement('div');
+  todoContainer.classList.add('todo-container');
+  const todoTitle = document.createElement('div');
+  todoTitle.textContent = 'Select a project or create a new one';
+
+  container.appendChild(todoContainer);
+  todoContainer.appendChild(todoTitle);
+  const newTodoCont = document.createElement('div');
+  newTodoCont.classList.add('new-todo-container', 'd-flex');
+  todoContainer.appendChild(newTodoCont);
+
+  const newTodo = document.createElement('div');
+  newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto');
+  const todoItemTitle = document.createElement('input');
+  todoItemTitle.classList.add('todo-item-title', 'form-control');
+  todoItemTitle.setAttribute('type', 'text');
+  todoItemTitle.placeholder = 'New todo...';
+  newTodo.appendChild(todoItemTitle);
+
+  const todoItemDescription = document.createElement('input');
+  todoItemDescription.classList.add('todo-item-descrip', 'form-control');
+  todoItemDescription.placeholder = 'Add description...';
+  newTodo.appendChild(todoItemDescription);
+
+  const todoItemDueDate = document.createElement('input');
+  todoItemDueDate.setAttribute('type', 'date');
+  todoItemDueDate.classList.add('todo-item-date', 'form-control');
+  newTodo.appendChild(todoItemDueDate);
+
+  const todoItemPriority = document.createElement('select');
+  todoItemPriority.classList.add('todo-item-priority', 'form-control');
+  const optionOne = document.createElement('option');
+  optionOne.textContent = 'High';
+  todoItemPriority.appendChild(optionOne);
+  const optionTwo = document.createElement('option');
+  optionTwo.textContent = 'Medium';
+  todoItemPriority.appendChild(optionTwo);
+  const optionThree = document.createElement('option');
+  optionThree.textContent = 'Low';
+  todoItemPriority.appendChild(optionThree);
+  newTodo.appendChild(todoItemPriority);
+
+  newTodoCont.appendChild(newTodo);
+
+  const addTodoBtn = document.createElement('button');
+  addTodoBtn.classList.add('add-project-btn', 'btn-success', 'px-3');
+  addTodoBtn.id = 'add-todo-btn';
+  addTodoBtn.textContent = 'Add';
+  newTodo.appendChild(addTodoBtn);
 };
 
 export default renderLayout;

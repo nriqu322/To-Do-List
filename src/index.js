@@ -5,7 +5,6 @@ import {
   createProject, removeProject, createTodo, projectList,
 } from './logic';
 import { addProject, selectProject } from './ui';
-import Todo from './todo';
 
 renderLayout();
 
