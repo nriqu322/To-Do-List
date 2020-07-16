@@ -1,5 +1,5 @@
 import Project from './projects';
-// import todo from './todo';
+import Todo from './todo';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -22,17 +22,21 @@ const removeProject = () => {
     for (let i = 0; i < projectList.length; i += 1) {
       if (projectList[i].title === deleteProject.textContent) {
         projectList.splice(i, 1);
+        const todoContainer = document.querySelector('.todo-container');
+        while (todoContainer.firstChild) {
+          todoContainer.removeChild(todoContainer.firstChild);
+        }
         save();
       }
     }
   });
 };
 
-// const createTodo = (title, description, dueDate, priority, project) => {
-//   const newTodo = todo(title, description, dueDate, priority);
-//   project.addTodo(newTodo);
-// };
+const createTodo = (title, description, dueDate, priority, project) => {
+  const newTodo = Todo(title, description, dueDate, priority);
+  project.addTodo(newTodo);
+};
 
 export {
-  /* createTodo, */ createProject, projectList, removeProject,
+  createTodo, createProject, projectList, removeProject,
 };

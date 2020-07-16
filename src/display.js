@@ -47,4 +47,4 @@ const renderTodos = () => {
   // });
 };
 
-export { renderProjects, renderTodos };
+export { renderProjects, renderTodos, clearElement };

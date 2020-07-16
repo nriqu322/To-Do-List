@@ -25,8 +25,8 @@ const renderLayout = () => {
 
   const todoContainer = document.createElement('div');
   todoContainer.classList.add('todo-container');
-  const todoTitle = document.createElement('h2');
-  todoTitle.textContent = 'Project Selected';
+  const todoTitle = document.createElement('div');
+  todoTitle.textContent = 'Select a project or create a new one';
 
   container.appendChild(todoContainer);
   todoContainer.appendChild(todoTitle);
