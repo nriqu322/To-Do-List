@@ -1,4 +1,4 @@
-const project = (title) => {
+const Project = (title) => {
   // const getTitle = () => title;
   const todoList = [];
 
@@ -17,4 +17,4 @@ const project = (title) => {
   };
 };
 
-export default project;
+export default Project;

@@ -1,4 +1,4 @@
-const todo = (title, description, dueDate, priority) => {
+const Todo = (title, description, dueDate, priority) => {
   // const getTitle = () => title;
   // const getDescription = () => description;
   // const getDueDate = () => dueDate;
@@ -10,4 +10,4 @@ const todo = (title, description, dueDate, priority) => {
   };
 };
 
-export default todo;
+export default Todo;

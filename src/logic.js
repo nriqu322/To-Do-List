@@ -1,4 +1,4 @@
-import project from './projects';
+import Project from './projects';
 // import todo from './todo';
 
 const STORAGE_KEY = 'project.list';
@@ -9,7 +9,7 @@ function save() {
 }
 
 const createProject = (title) => {
-  const newProject = project(title);
+  const newProject = Project(title);
   projectList.push(newProject);
   save();
 };

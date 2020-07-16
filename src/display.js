@@ -1,5 +1,5 @@
 import { projectList } from './logic';
-import project from './projects';
+// import project from './projects';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
