@@ -37,37 +37,48 @@ const renderTodos = () => {
   newTodoContainer.classList.add = 'd-flex';
 
   const todoListCont = document.createElement('div');
-  todoListCont.classList.add('todo-list');
+  todoListCont.classList.add('todo-list', 'd-flex', 'flex-column');
   todoItemContainer.appendChild(todoListCont);
 
   selectedProject.todoList.forEach((todo) => {
     const todoItem = document.createElement('div');
-    todoItem.classList.add('todo-item');
+    const todoItemLine = document.createElement('div');
+    const todoItemLeft = document.createElement('div');
+    const todoItemRight = document.createElement('div');
+
+    todoItem.id = todo.id;
+    todoItem.classList.add('todo-item', 'd-flex', 'flex-column');
+    todoItemLine.classList.add('d-flex', 'justify-content-between', 'align-items-center');
+    todoItemLeft.classList.add('todo-item-left', 'd-flex', 'align-items-center');
+    todoItemRight.classList.add('todo-item-right', 'd-flex');
     todoListCont.appendChild(todoItem);
+    todoItem.appendChild(todoItemLine);
+    todoItemLine.appendChild(todoItemLeft);
+    todoItemLine.appendChild(todoItemRight);
 
     const inputCheck = document.createElement('input');
     inputCheck.setAttribute('type', 'checkbox');
-    todoItem.appendChild(inputCheck);
+    todoItemLeft.appendChild(inputCheck);
 
     const todoTitle = document.createElement('div');
-    todoTitle.classList.add('todo-item-title');
+    todoTitle.classList.add('todo-item-title', 'font-weight-bold');
     todoTitle.textContent = todo.title;
-    todoItem.appendChild(todoTitle);
+    todoItemLeft.appendChild(todoTitle);
 
     const todoDesc = document.createElement('div');
-    todoDesc.classList.add('todo-item-descrip');
+    todoDesc.classList.add('todo-item-descrip', 'font-italic', 'col-12');
     todoDesc.textContent = todo.description;
     todoItem.appendChild(todoDesc);
 
     const todoDueDate = document.createElement('div');
     todoDueDate.classList.add('todo-item-date');
     todoDueDate.textContent = todo.dueDate;
-    todoItem.appendChild(todoDueDate);
+    todoItemRight.appendChild(todoDueDate);
 
     const todoPrior = document.createElement('div');
     todoPrior.classList.add('todo-item-priority');
     todoPrior.textContent = todo.priority;
-    todoItem.appendChild(todoPrior);
+    todoItemRight.appendChild(todoPrior);
   });
 };
 

@@ -50,40 +50,38 @@ const addProject = () => {
   });
 };
 
+// document.addEventListener('click', (e) => {
+//   if (e.target && e.target.id === 'add-todo-btn') {
+//     console.log('This event is working');
+//   }
+// });
+
 const addTodos = () => {
   const inputTodoTitle = document.querySelector('#todo-item-title');
   const inputTodoDesc = document.querySelector('.todo-item-descrip');
   const inputTodoDueDate = document.querySelector('.todo-item-date');
   const inputTodoPriority = document.querySelector('.todo-item-priority');
-  const addTodoBtn = document.querySelector('#add-todo-btn');
   const activeProject = document.querySelector('.active-project');
   const selectedProject = projectList.find(project => project.id === activeProject.id);
 
-  addTodoBtn.addEventListener('click', () => {
-    // if (inputTodoTitle.value !== '') {
-      // document.querySelector('.todo-list').remove();
-      console.log(inputTodoTitle.value);
-      createTodo(
-        inputTodoTitle.value,
-        inputTodoDesc.value,
-        inputTodoDueDate.value,
-        inputTodoPriority.value,
-        selectedProject,
-      );
-      // inputTodo.value = '';
-      renderTodos();
-    // }
+  document.addEventListener('click', (e) => {
+    if (e.target && e.target.id === 'add-todo-btn') {
+      // console.log('This event is working');
+      if (inputTodoTitle.value !== '') {
+        // document.querySelector('.todo-list').remove();
+        // console.log(inputTodoTitle.value);
+        createTodo(
+          inputTodoTitle.value,
+          inputTodoDesc.value,
+          inputTodoDueDate.value,
+          inputTodoPriority.value,
+          selectedProject,
+        );
+        // inputTodo.value = '';
+        renderTodos();
+      }
+    }
   });
-
-  // const addBtnTodo = document.getElementById('add-todo-btn');
-  // addBtnTodo.addEventListener('click', () => {
-  //   if (inputTodo.value !== '') {
-  //     document.querySelector('.todo-list').remove();
-  //     createTodo(inputTodo.value);
-  //     inputTodo.value = '';
-  //     renderProjects();
-  //   }
-  // });
 };
 
 export { addProject, selectProject, addTodos };

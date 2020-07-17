@@ -1,6 +1,5 @@
 import Project from './projects';
 import Todo from './todo';
-import { renderTodos } from './display';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -12,6 +11,9 @@ function save() {
 const createProject = (title) => {
   const newProject = Project(title);
   projectList.push(newProject);
+  // if (projectList.length > 1) {
+  //   document.getElementsByClassName('project').lasChild.classList = 'active-project';
+  // }
   save();
 };
 
@@ -38,6 +40,7 @@ const removeProject = () => {
 const createTodo = (title, description, dueDate, priority, project) => {
   const newTodo = Todo(title, description, dueDate, priority);
   project.addTodo(newTodo);
+  save();
 };
 
 export {

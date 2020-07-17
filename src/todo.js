@@ -3,10 +3,11 @@ const Todo = (title, description, dueDate, priority) => {
   // const getDescription = () => description;
   // const getDueDate = () => dueDate;
   // const getPriority = () => priority;
+  const id = Date.now().toString();
   const isCheked = false;
 
   return {
-    title, description, dueDate, priority, isCheked,
+    title, description, dueDate, priority, id, isCheked,
   };
 };
 
