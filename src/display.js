@@ -49,6 +49,10 @@ const renderTodos = () => {
     todoItem.classList.add('todo-item');
     todoListCont.appendChild(todoItem);
 
+    const inputCheck = document.createElement('input');
+    inputCheck.setAttribute('type', 'checkbox');
+    todoItem.appendChild(inputCheck);
+
     const todoTitle = document.createElement('div');
     todoTitle.classList.add('todo-item-title');
     todoTitle.textContent = todo.title;
