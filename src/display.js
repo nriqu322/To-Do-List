@@ -40,6 +40,7 @@ const renderTodos = () => {
   todoListCont.classList.add('todo-list', 'd-flex', 'flex-column');
   todoItemContainer.appendChild(todoListCont);
 
+  let cnt = 0;
   selectedProject.todoList.forEach((todo) => {
     const todoItem = document.createElement('div');
     const todoItemLine = document.createElement('div');
@@ -50,7 +51,7 @@ const renderTodos = () => {
     todoItem.classList.add('todo-item', 'd-flex', 'flex-column', 'px-2', 'py-3');
     todoItemLine.classList.add('d-flex', 'justify-content-between', 'align-items-center');
     todoItemLeft.classList.add('todo-item-left', 'd-flex', 'align-items-center');
-    todoItemRight.classList.add('todo-item-right', 'd-flex');
+    todoItemRight.classList.add('todo-item-right', 'd-flex', 'align-items-center');
     todoListCont.appendChild(todoItem);
     todoItem.appendChild(todoItemLine);
     todoItemLine.appendChild(todoItemLeft);
@@ -79,6 +80,26 @@ const renderTodos = () => {
     todoDueDate.classList.add('todo-item-date');
     todoDueDate.textContent = todo.dueDate;
     todoItemRight.appendChild(todoDueDate);
+
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('btn', 'btn-warning', 'py-0', 'mx-2');
+    editBtn.id = `edit-btn-${cnt}`;
+    editBtn.textContent = 'Edit';
+    todoItemRight.appendChild(editBtn);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('btn', 'btn-danger', 'py-0', 'mr-2');
+    deleteBtn.id = `delete-btn-${cnt}`;
+    deleteBtn.textContent = 'x';
+    todoItemRight.appendChild(deleteBtn);
+
+    console.log(document.getElementById(`delete-btn-${cnt}`));
+    document.getElementById(`delete-btn-${cnt}`).addEventListener('click', () => {
+      selectedProject.removeTodo(cnt);
+      renderTodos();
+    });
+
+    cnt += 1;
   });
 };
 

@@ -25,12 +25,10 @@ h1 {
 }
 
 .left-menu {
-  background-color: lightskyblue;
   width: 30%;
 }
 
 .todo-container {
-  background-color: lightcoral;
   width: 70%;
 }
 
@@ -38,9 +36,13 @@ li {
   list-style: none;
 }
 
+.project {
+  color: rgb(104, 100, 100);
+}
+
 .active-project {
   font-weight: bold;
-  color: yellow;
+  color: #000;
 }
 
 /* .new-todo-container {
