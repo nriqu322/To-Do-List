@@ -59,7 +59,7 @@ const renderLayout = () => {
   todoContainer.appendChild(newTodoCont);
 
   const newTodo = document.createElement('div');
-  newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto');
+  newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto', 'p-3');
   const todoItemTitle = document.createElement('input');
   todoItemTitle.classList.add('todo-item-title', 'form-control');
   todoItemTitle.id = 'todo-item-title';

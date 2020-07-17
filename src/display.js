@@ -47,7 +47,7 @@ const renderTodos = () => {
     const todoItemRight = document.createElement('div');
 
     todoItem.id = todo.id;
-    todoItem.classList.add('todo-item', 'd-flex', 'flex-column');
+    todoItem.classList.add('todo-item', 'd-flex', 'flex-column', 'px-2', 'py-3');
     todoItemLine.classList.add('d-flex', 'justify-content-between', 'align-items-center');
     todoItemLeft.classList.add('todo-item-left', 'd-flex', 'align-items-center');
     todoItemRight.classList.add('todo-item-right', 'd-flex');
@@ -61,24 +61,24 @@ const renderTodos = () => {
     todoItemLeft.appendChild(inputCheck);
 
     const todoTitle = document.createElement('div');
-    todoTitle.classList.add('todo-item-title', 'font-weight-bold');
+    todoTitle.classList.add('todo-item-title', 'font-weight-bold', 'ml-2');
     todoTitle.textContent = todo.title;
     todoItemLeft.appendChild(todoTitle);
 
     const todoDesc = document.createElement('div');
-    todoDesc.classList.add('todo-item-descrip', 'font-italic', 'col-12');
+    todoDesc.classList.add('todo-item-descrip', 'font-italic', 'col-12', 'ml-1');
     todoDesc.textContent = todo.description;
     todoItem.appendChild(todoDesc);
+
+    const todoPrior = document.createElement('div');
+    todoPrior.classList.add('todo-item-priority', 'pr-2');
+    todoPrior.textContent = todo.priority;
+    todoItemRight.appendChild(todoPrior);
 
     const todoDueDate = document.createElement('div');
     todoDueDate.classList.add('todo-item-date');
     todoDueDate.textContent = todo.dueDate;
     todoItemRight.appendChild(todoDueDate);
-
-    const todoPrior = document.createElement('div');
-    todoPrior.classList.add('todo-item-priority');
-    todoPrior.textContent = todo.priority;
-    todoItemRight.appendChild(todoPrior);
   });
 };
 
