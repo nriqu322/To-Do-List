@@ -1,4 +1,4 @@
-import { createProject, createTodo } from './logic';
+import { createProject, createTodo, projectList } from './logic';
 import { renderProjects, renderTodos } from './display';
 
 // const STORAGE_SELECT_KEY = 'project.listSelected';
@@ -50,16 +50,27 @@ const addProject = () => {
   });
 };
 
-const addTodo = () => {
-  const inputTodo = document.getElementById('new-todo');
-  inputTodo.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-      if (inputTodo.value !== '') {
-        document.querySelector('.todo-list').remove();
-        createTodo(inputTodo.value);
-        inputTodo.value = '';
-        renderTodos();
-      }
+const addTodos = () => {
+  const inputTodoTitle = document.querySelector('.todo-item-title');
+  const inputTodoDesc = document.querySelector('.todo-item-descrip');
+  const inputTodoDueDate = document.querySelector('.todo-item-date');
+  const inputTodoPriority = document.querySelector('.todo-item-priority');
+  const addTodoBtn = document.querySelector('.add-project-btn');
+  const activeProject = document.querySelector('.active-project');
+  const selectedProject = projectList.find(project => project.id === activeProject.id);
+
+  addTodoBtn.addEventListener('click', () => {
+    if (inputTodoTitle.value !== '') {
+      // document.querySelector('.todo-list').remove();
+      createTodo(
+        inputTodoTitle.value,
+        inputTodoDesc.value,
+        inputTodoDueDate.value,
+        inputTodoPriority.value,
+        selectedProject,
+      );
+      // inputTodo.value = '';
+      renderTodos();
     }
   });
 
@@ -74,4 +85,4 @@ const addTodo = () => {
   // });
 };
 
-export { addProject, selectProject, addTodo };
+export { addProject, selectProject, addTodos };

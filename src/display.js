@@ -1,5 +1,4 @@
 import { projectList } from './logic';
-import Project from './projects';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -23,45 +22,52 @@ const clearElement = (element) => {
 };
 
 const renderTodos = () => {
-  const todoContainer = document.querySelector('.todo-container');
-  clearElement(todoContainer);
+  const todoItemContainer = document.querySelector('.todo-item-container');
+  const newTodoContainer = document.querySelector('.new-todo-container');
+  clearElement(todoItemContainer);
+
   const activeProject = document.querySelector('.active-project');
-  // console.log(activeProject.id);
-  // console.log(activeProject.textContent);
+  const selectedProject = projectList.find(project => project.id === activeProject.id);
+
   const titleProject = document.createElement('h2');
   titleProject.classList.add('title-project');
-  titleProject.textContent = activeProject.textContent;
-  todoContainer.appendChild(titleProject);
+  titleProject.textContent = selectedProject.title;
+  todoItemContainer.appendChild(titleProject);
+  newTodoContainer.style.display = '';
+  newTodoContainer.classList.add = 'd-flex';
 
   const todoListCont = document.createElement('div');
   todoListCont.classList.add('todo-list');
-  todoContainer.appendChild(todoListCont);
+  todoItemContainer.appendChild(todoListCont);
 
-  const selectedProject = projectList.find(project => project.id === activeProject.id);
-  console.log(selectedProject);
-
+  // const selectedProject = projectList.find(project => project.id === activeProject.id);
+  // console.log(activeProject);
+  // console.log(selectedProject);
+  // console.log(selectedProject.todoList);
   selectedProject.todoList.forEach((todo) => {
-    const [todoTitl, todoDescrip, todoDate, todoPriority] = todo;
+    const todoItem = document.createElement('div');
+    todoItem.classList.add('todo-item');
+    todoListCont.appendChild(todoItem);
 
     const todoTitle = document.createElement('div');
     todoTitle.classList.add('todo-item-title');
-    todoTitle.textContent = todoTitl;
-    todoListCont.appendChild(todoTitle);
+    todoTitle.textContent = todo.title;
+    todoItem.appendChild(todoTitle);
 
     const todoDesc = document.createElement('div');
     todoDesc.classList.add('todo-item-descrip');
-    todoDesc.textContent = todoDescrip;
-    todoListCont.appendChild(todoDescrip);
+    todoDesc.textContent = todo.description;
+    todoItem.appendChild(todoDesc);
 
     const todoDueDate = document.createElement('div');
     todoDueDate.classList.add('todo-item-date');
-    todoDueDate.textContent = todoDate;
-    todoListCont.appendChild(todoDate);
+    todoDueDate.textContent = todo.dueDate;
+    todoItem.appendChild(todoDueDate);
 
     const todoPrior = document.createElement('div');
     todoPrior.classList.add('todo-item-priority');
-    todoPrior.textContent = todoPriority;
-    todoListCont.appendChild(todoPriority);
+    todoPrior.textContent = todo.priority;
+    todoItem.appendChild(todoPrior);
   });
 };
 

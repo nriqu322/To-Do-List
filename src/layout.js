@@ -47,13 +47,15 @@ const renderLayout = () => {
 
   const todoContainer = document.createElement('div');
   todoContainer.classList.add('todo-container');
-  const todoTitle = document.createElement('div');
-  todoTitle.textContent = 'Select a project or create a new one';
+  const todoItemCont = document.createElement('div');
+  todoItemCont.classList.add('todo-item-container');
 
   container.appendChild(todoContainer);
-  todoContainer.appendChild(todoTitle);
+  todoContainer.appendChild(todoItemCont);
+
   const newTodoCont = document.createElement('div');
-  newTodoCont.classList.add('new-todo-container', 'd-flex');
+  newTodoCont.classList.add('new-todo-container');
+  newTodoCont.style.display = 'none';
   todoContainer.appendChild(newTodoCont);
 
   const newTodo = document.createElement('div');
