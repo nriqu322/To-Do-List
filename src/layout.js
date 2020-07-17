@@ -16,7 +16,7 @@ const renderLayout = () => {
   content.appendChild(container);
 
   const leftMenu = document.createElement('div');
-  leftMenu.classList.add('left-menu', 'pt-2', 'px-2');
+  leftMenu.classList.add('left-menu', 'pt-3', 'px-2');
   const leftTitle = document.createElement('h2');
   leftTitle.textContent = 'Projects';
 
@@ -41,12 +41,12 @@ const renderLayout = () => {
   newProjectCont.appendChild(addProjectBtn);
 
   const deleteProjectBtn = document.createElement('button');
-  deleteProjectBtn.classList.add('delete-btn', 'btn', 'btn-danger', 'py-0');
+  deleteProjectBtn.classList.add('delete-btn', 'btn', 'btn-danger', 'py-0', 'my-2');
   deleteProjectBtn.textContent = 'Delete';
   leftMenu.appendChild(deleteProjectBtn);
 
   const todoContainer = document.createElement('div');
-  todoContainer.classList.add('todo-container', 'pl-3', 'pt-2');
+  todoContainer.classList.add('todo-container', 'pl-3', 'pt-3');
   const todoItemCont = document.createElement('div');
   todoItemCont.classList.add('todo-item-container');
 
