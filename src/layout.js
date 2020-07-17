@@ -62,6 +62,7 @@ const renderLayout = () => {
   newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto');
   const todoItemTitle = document.createElement('input');
   todoItemTitle.classList.add('todo-item-title', 'form-control');
+  todoItemTitle.id = 'todo-item-title';
   todoItemTitle.setAttribute('type', 'text');
   todoItemTitle.placeholder = 'New todo...';
   newTodo.appendChild(todoItemTitle);
@@ -92,7 +93,7 @@ const renderLayout = () => {
   newTodoCont.appendChild(newTodo);
 
   const addTodoBtn = document.createElement('button');
-  addTodoBtn.classList.add('add-project-btn', 'btn-success', 'px-3');
+  addTodoBtn.classList.add('add-todo-btn', 'btn-success', 'px-3');
   addTodoBtn.id = 'add-todo-btn';
   addTodoBtn.textContent = 'Add';
   newTodo.appendChild(addTodoBtn);

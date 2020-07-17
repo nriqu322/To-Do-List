@@ -4,7 +4,7 @@ import { renderProjects, renderTodos } from './display';
 import {
   createProject, removeProject, createTodo, projectList,
 } from './logic';
-import { addProject, selectProject } from './ui';
+import { addProject, selectProject, addTodos } from './ui';
 
 renderLayout();
 
@@ -23,4 +23,6 @@ createTodo('Create a new Task', 'Click on the add button and fill the form', new
 createTodo('Mark todo as done', 'Click on the check box', new Date().toISOString().split('T')[0], 'high', projectList[0]);
 createTodo('Delete todo', 'Click on the trask icon to delete', new Date().toISOString().split('T')[0], 'medium', projectList[0]);
 
+
 renderTodos();
+addTodos();

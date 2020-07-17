@@ -51,17 +51,18 @@ const addProject = () => {
 };
 
 const addTodos = () => {
-  const inputTodoTitle = document.querySelector('.todo-item-title');
+  const inputTodoTitle = document.querySelector('#todo-item-title');
   const inputTodoDesc = document.querySelector('.todo-item-descrip');
   const inputTodoDueDate = document.querySelector('.todo-item-date');
   const inputTodoPriority = document.querySelector('.todo-item-priority');
-  const addTodoBtn = document.querySelector('.add-project-btn');
+  const addTodoBtn = document.querySelector('#add-todo-btn');
   const activeProject = document.querySelector('.active-project');
   const selectedProject = projectList.find(project => project.id === activeProject.id);
 
   addTodoBtn.addEventListener('click', () => {
-    if (inputTodoTitle.value !== '') {
+    // if (inputTodoTitle.value !== '') {
       // document.querySelector('.todo-list').remove();
+      console.log(inputTodoTitle.value);
       createTodo(
         inputTodoTitle.value,
         inputTodoDesc.value,
@@ -71,7 +72,7 @@ const addTodos = () => {
       );
       // inputTodo.value = '';
       renderTodos();
-    }
+    // }
   });
 
   // const addBtnTodo = document.getElementById('add-todo-btn');

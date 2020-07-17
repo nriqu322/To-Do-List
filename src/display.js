@@ -40,10 +40,6 @@ const renderTodos = () => {
   todoListCont.classList.add('todo-list');
   todoItemContainer.appendChild(todoListCont);
 
-  // const selectedProject = projectList.find(project => project.id === activeProject.id);
-  // console.log(activeProject);
-  // console.log(selectedProject);
-  // console.log(selectedProject.todoList);
   selectedProject.todoList.forEach((todo) => {
     const todoItem = document.createElement('div');
     todoItem.classList.add('todo-item');

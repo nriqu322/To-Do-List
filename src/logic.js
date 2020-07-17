@@ -1,5 +1,6 @@
 import Project from './projects';
 import Todo from './todo';
+import { renderTodos } from './display';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -22,10 +23,12 @@ const removeProject = () => {
     for (let i = 0; i < projectList.length; i += 1) {
       if (projectList[i].title === deleteProject.textContent) {
         projectList.splice(i, 1);
-        const todoContainer = document.querySelector('.todo-container');
-        while (todoContainer.firstChild) {
-          todoContainer.removeChild(todoContainer.firstChild);
+        const todoItemContainer = document.querySelector('.todo-item-container');
+        while (todoItemContainer.firstChild) {
+          todoItemContainer.removeChild(todoItemContainer.firstChild);
         }
+        const newTodoContainer = document.querySelector('.new-todo-container');
+        newTodoContainer.style.display = 'none';
         save();
       }
     }
