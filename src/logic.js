@@ -43,6 +43,49 @@ const createTodo = (title, description, dueDate, priority, project) => {
   save();
 };
 
+const editTodo = (id) => {
+  const todoTitle = document.getElementById(`todo-item-title-${id}`);
+  todoTitle.addEventListener('click', () => {
+    const todoItemLeft = document.getElementById(`todo-item-left-${id}`);
+    const todoEditTitle = document.createElement('input');
+    todoEditTitle.classList.add('edit-todo-title');
+    todoEditTitle.value = todoTitle.textContent;
+    todoTitle.textContent = '';
+    todoItemLeft.appendChild(todoEditTitle);
+    todoEditTitle.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        if (todoEditTitle.value !== '') {
+          todoTitle.textContent = todoEditTitle.value;
+          todoEditTitle.remove();
+          save();
+          // renderTodos();
+        }
+      }
+    });
+  });
+
+  const todoDesc = document.getElementById(`todo-item-descrip-${id}`);
+  todoDesc.addEventListener('click', () => {
+    const todoItem = document.getElementById(`todo-item-${id}`);
+    const todoEditDesc = document.createElement('input');
+    todoEditDesc.classList.add('edit-todo-title');
+    todoEditDesc.value = todoDesc.textContent;
+    todoDesc.textContent = '';
+    todoItem.appendChild(todoEditDesc);
+    todoEditDesc.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        if (todoEditDesc.value !== '') {
+          todoDesc.textContent = todoEditDesc.value;
+          todoEditDesc.remove();
+          save();
+          // renderTodos();
+        }
+      }
+    });
+  });
+};
+
+
 export {
-  createTodo, createProject, projectList, removeProject, STORAGE_KEY,
+  createTodo, createProject, projectList, removeProject, editTodo,
 };
