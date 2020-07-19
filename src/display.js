@@ -1,4 +1,4 @@
-import { projectList } from './logic';
+import { projectList, STORAGE_KEY } from './logic';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -87,13 +87,31 @@ const renderTodos = () => {
     editBtn.textContent = 'Edit';
     todoItemRight.appendChild(editBtn);
 
+    todoTitle.addEventListener('click', () => {
+      const todoEditTitle = document.createElement('input');
+      todoEditTitle.classList.add('edit-todo-title');
+      todoEditTitle.value = todo.title;
+      todoTitle.textContent = '';
+      todoItemLeft.appendChild(todoEditTitle);
+      todoEditTitle.addEventListener('keyup', (e) => {
+        if (e.keyCode === 13) {
+          if (todoEditTitle.value !== '') {
+            todoTitle.textContent = todoEditTitle.value;
+            todoEditTitle.remove();
+            // renderTodos();
+          }
+        }
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(projectList));
+    });
+
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('btn', 'btn-danger', 'py-0', 'mr-2');
     deleteBtn.id = `delete-btn-${cnt}`;
     deleteBtn.textContent = 'x';
     todoItemRight.appendChild(deleteBtn);
 
-    console.log(document.getElementById(`delete-btn-${cnt}`));
+    // console.log(document.getElementById(`delete-btn-${cnt}`));
     document.getElementById(`delete-btn-${cnt}`).addEventListener('click', () => {
       selectedProject.removeTodo(cnt);
       renderTodos();

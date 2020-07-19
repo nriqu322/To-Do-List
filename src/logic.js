@@ -44,5 +44,5 @@ const createTodo = (title, description, dueDate, priority, project) => {
 };
 
 export {
-  createTodo, createProject, projectList, removeProject,
+  createTodo, createProject, projectList, removeProject, STORAGE_KEY,
 };
