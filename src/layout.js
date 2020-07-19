@@ -61,32 +61,32 @@ const renderLayout = () => {
   const newTodo = document.createElement('div');
   newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto', 'p-3');
   const todoItemTitle = document.createElement('input');
-  todoItemTitle.classList.add('todo-item-title', 'form-control');
+  todoItemTitle.classList.add('todo-input-title', 'form-control');
   todoItemTitle.id = 'todo-item-title';
   todoItemTitle.setAttribute('type', 'text');
   todoItemTitle.placeholder = 'New todo...';
   newTodo.appendChild(todoItemTitle);
 
   const todoItemDescription = document.createElement('input');
-  todoItemDescription.classList.add('todo-item-descrip', 'form-control');
+  todoItemDescription.classList.add('todo-input-descrip', 'form-control');
   todoItemDescription.placeholder = 'Add description...';
   newTodo.appendChild(todoItemDescription);
 
   const todoItemDueDate = document.createElement('input');
   todoItemDueDate.setAttribute('type', 'date');
-  todoItemDueDate.classList.add('todo-item-date', 'form-control');
+  todoItemDueDate.classList.add('todo-input-date', 'form-control');
   newTodo.appendChild(todoItemDueDate);
 
   const todoItemPriority = document.createElement('select');
-  todoItemPriority.classList.add('todo-item-priority', 'form-control');
+  todoItemPriority.classList.add('todo-input-priority', 'form-control');
   const optionOne = document.createElement('option');
-  optionOne.textContent = 'High';
+  optionOne.textContent = 'Low';
   todoItemPriority.appendChild(optionOne);
   const optionTwo = document.createElement('option');
   optionTwo.textContent = 'Medium';
   todoItemPriority.appendChild(optionTwo);
   const optionThree = document.createElement('option');
-  optionThree.textContent = 'Low';
+  optionThree.textContent = 'High';
   todoItemPriority.appendChild(optionThree);
   newTodo.appendChild(todoItemPriority);
 

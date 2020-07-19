@@ -58,7 +58,6 @@ const editTodo = (id) => {
           todoTitle.textContent = todoEditTitle.value;
           todoEditTitle.remove();
           save();
-          // renderTodos();
         }
       }
     });
@@ -78,7 +77,52 @@ const editTodo = (id) => {
           todoDesc.textContent = todoEditDesc.value;
           todoEditDesc.remove();
           save();
-          // renderTodos();
+        }
+      }
+    });
+  });
+
+  const todoPrior = document.getElementById(`todo-item-priority-${id}`);
+  todoPrior.addEventListener('click', () => {
+    const todoEditPrior = document.createElement('select');
+    const optionOne = document.createElement('option');
+    optionOne.textContent = 'Low';
+    todoEditPrior.appendChild(optionOne);
+    const optionTwo = document.createElement('option');
+    optionTwo.textContent = 'Medium';
+    todoEditPrior.appendChild(optionTwo);
+    const optionThree = document.createElement('option');
+    optionThree.textContent = 'High';
+    todoEditPrior.appendChild(optionThree);
+    todoEditPrior.classList.add('edit-todo-priority');
+    todoEditPrior.value = todoPrior.textContent;
+    todoPrior.textContent = '';
+    todoPrior.after(todoEditPrior);
+    todoEditPrior.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        if (todoEditPrior.value !== '') {
+          todoPrior.textContent = todoEditPrior.value;
+          todoEditPrior.remove();
+          save();
+        }
+      }
+    });
+  });
+
+  const todoDueDate = document.getElementById(`todo-item-date-${id}`);
+  todoDueDate.addEventListener('click', () => {
+    const todoEditDueDate = document.createElement('input');
+    todoEditDueDate.setAttribute('type', 'date');
+    todoEditDueDate.classList.add('edit-todo-date');
+    todoEditDueDate.value = todoDueDate.textContent;
+    todoDueDate.textContent = '';
+    todoDueDate.after(todoEditDueDate);
+    todoEditDueDate.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        if (todoEditDueDate.value !== '') {
+          todoDueDate.textContent = todoEditDueDate.value;
+          todoEditDueDate.remove();
+          save();
         }
       }
     });
