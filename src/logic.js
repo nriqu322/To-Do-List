@@ -1,5 +1,6 @@
 import Project from './projects';
 import Todo from './todo';
+// import { renderTodos } from './display';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -128,7 +129,6 @@ const editTodo = (id) => {
     });
   });
 };
-
 
 export {
   createTodo, createProject, projectList, removeProject, editTodo,

@@ -95,10 +95,8 @@ const renderTodos = () => {
     deleteBtn.textContent = 'x';
     todoItemRight.appendChild(deleteBtn);
 
-    // console.log(document.getElementById(`delete-btn-${cnt}`));
-    document.getElementById(`delete-btn-${cnt}`).addEventListener('click', () => {
-      selectedProject.removeTodo(cnt);
-      renderTodos();
+    deleteBtn.addEventListener('click', () => {
+      todoItem.remove();
     });
 
     cnt += 1;
