@@ -1,6 +1,6 @@
 import './style.css';
 import renderLayout from './layout';
-import { renderProjects, renderTodos } from './display';
+import { renderProjects } from './display';
 import {
   createProject, removeProject, createTodo, projectList,
 } from './logic';

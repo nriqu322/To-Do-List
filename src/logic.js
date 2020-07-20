@@ -25,6 +25,16 @@ const createProject = (title) => {
   // }
   save();
 };
+const deleteTodo = (project, id) => {
+  const deleteBtn = document.getElementById(`delete-btn-${id}`);
+  const todoItem = document.getElementById(`todo-item-${id}`);
+  deleteBtn.addEventListener('click', () => {
+    todoItem.remove();
+    project.todoList.splice(id, 1);
+    save();
+  });
+};
+
 
 const removeProject = () => {
   const getDeleteBtn = document.querySelector('.delete-btn');
@@ -151,5 +161,5 @@ const editTodo = (project, id) => {
 };
 
 export {
-  createTodo, createProject, projectList, removeProject, editTodo,
+  createTodo, createProject, projectList, removeProject, editTodo, deleteTodo,
 };

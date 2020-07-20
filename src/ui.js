@@ -22,14 +22,11 @@ const selectProject = () => {
       addClass.classList.add('active-project');
       targetedProject = projectList.find(project => project.id === id);
       renderTodos(targetedProject);
-      // addTodos(targetedProject);
     }
-    // localStorage.setItem(STORAGE_SELECT_KEY, JSON.stringify(projectIdSelected));
   });
 };
 
 const addTodos = () => {
-  // if (selectedProject) {
   const inputTodoTitle = document.querySelector('.todo-input-title');
   const inputTodoDesc = document.querySelector('.todo-input-descrip');
   const inputTodoDueDate = document.querySelector('.todo-input-date');
@@ -48,12 +45,11 @@ const addTodos = () => {
         inputTodoTitle.value = '';
         inputTodoDesc.value = '';
         inputTodoDueDate.value = '';
-        inputTodoPriority.value = '';
+        inputTodoPriority.value = 'Low';
         renderTodos(targetedProject);
       }
     }
   });
-  // }
 };
 
 const addProject = () => {

@@ -1,4 +1,4 @@
-import { projectList, editTodo } from './logic';
+import { projectList, editTodo, deleteTodo } from './logic';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -116,9 +116,11 @@ const renderTodos = (targetedProject) => {
     deleteBtn.textContent = 'x';
     todoItemRight.appendChild(deleteBtn);
 
-    deleteBtn.addEventListener('click', () => {
-      todoItem.remove();
-    });
+    deleteTodo(targetedProject, cnt);
+    // deleteBtn.addEventListener('click', () => {
+    //   todoItem.remove();
+    //   store(targetedProject);
+    // });
 
     cnt += 1;
   });
