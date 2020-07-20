@@ -49,7 +49,7 @@ const renderTodos = (targetedProject) => {
     todoItemLine.classList.add('d-flex', 'justify-content-between', 'align-items-center');
     todoItemLeft.classList.add('todo-item-left', 'd-flex', 'align-items-center');
     todoItemLeft.id = `todo-item-left-${cnt}`;
-    todoItemRight.classList.add('todo-item-right', 'd-flex', 'align-items-center');
+    todoItemRight.classList.add('todo-item-right', 'd-flex', 'align-items-center', 'mr-4');
     todoItemRight.id = `todo-item-right-${cnt}`;
     todoListCont.appendChild(todoItem);
     todoItem.appendChild(todoItemLine);
@@ -112,9 +112,18 @@ const renderTodos = (targetedProject) => {
     deleteBtn.classList.add('btn', 'btn-danger', 'py-0', 'mx-2');
     deleteBtn.id = `delete-btn-${cnt}`;
     deleteBtn.textContent = 'x';
+    deleteBtn.style.visibility = 'hidden';
     todoItemRight.appendChild(deleteBtn);
 
     deleteTodo(targetedProject, cnt);
+
+    todoItem.addEventListener('mouseenter', () => {
+      deleteBtn.style.visibility = '';
+    });
+
+    todoItem.addEventListener('mouseleave', () => {
+      deleteBtn.style.visibility = 'hidden';
+    });
 
     cnt += 1;
   });
