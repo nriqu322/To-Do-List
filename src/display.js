@@ -76,10 +76,31 @@ const renderTodos = () => {
     todoItem.appendChild(todoDesc);
 
     const todoPrior = document.createElement('div');
-    todoPrior.classList.add('todo-item-priority', 'pr-2');
+    todoPrior.classList.add('todo-item-priority', 'px-2', 'mx-2');
     todoPrior.id = `todo-item-priority-${cnt}`;
     todoPrior.textContent = todo.priority;
+    if (todoPrior.textContent.toLowerCase() === 'high') {
+      todoPrior.classList.add('high');
+    } else if (todoPrior.textContent.toLowerCase() === 'medium') {
+      todoPrior.classList.add('medium');
+    } else {
+      todoPrior.classList.add('low');
+    }
     todoItemRight.appendChild(todoPrior);
+
+    inputCheck.addEventListener('click', () => {
+      if (inputCheck.checked) {
+        todoTitle.style.textDecoration = 'line-through';
+        todoItem.style.backgroundColor = 'rgb(233, 233, 233)';
+        todoItem.style.color = 'gray';
+        todoPrior.classList.add('bg-secondary');
+      } else {
+        todoTitle.style.textDecoration = 'none';
+        todoItem.style.backgroundColor = '#fff';
+        todoItem.style.color = 'black';
+        todoPrior.classList.remove('bg-secondary');
+      }
+    });
 
     const todoDueDate = document.createElement('div');
     todoDueDate.classList.add('todo-item-date');

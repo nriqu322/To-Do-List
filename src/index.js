@@ -15,6 +15,7 @@ if (projectList.length === 0) {
     createTodo('Create a new Task', 'Click on the add button and fill the form', new Date().toISOString().split('T')[0], 'high', projectList[0]);
     createTodo('Mark todo as done', 'Click on the check box', new Date().toISOString().split('T')[0], 'high', projectList[0]);
     createTodo('Delete todo', 'Click on the red x icon to delete', new Date().toISOString().split('T')[0], 'medium', projectList[0]);
+    createTodo('Edit Todo', 'Click on the element you want to edit and press enter after edit it', new Date().toISOString().split('T')[0], 'low', projectList[0]);
   }
 }
 
