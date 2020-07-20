@@ -21,17 +21,16 @@ const clearElement = (element) => {
   }
 };
 
-const renderTodos = () => {
+const renderTodos = (targetedProject) => {
   const todoItemContainer = document.querySelector('.todo-item-container');
   const newTodoContainer = document.querySelector('.new-todo-container');
   clearElement(todoItemContainer);
+  // const activeProject = document.querySelector('.active-project');
 
-  const activeProject = document.querySelector('.active-project');
-  const selectedProject = projectList.find(project => project.id === activeProject.id);
 
   const titleProject = document.createElement('h2');
   titleProject.classList.add('title-project');
-  titleProject.textContent = selectedProject.title;
+  titleProject.textContent = targetedProject.title;
   todoItemContainer.appendChild(titleProject);
   newTodoContainer.style.display = '';
   newTodoContainer.classList.add = 'd-flex';
@@ -41,7 +40,7 @@ const renderTodos = () => {
   todoItemContainer.appendChild(todoListCont);
 
   let cnt = 0;
-  selectedProject.todoList.forEach((todo) => {
+  targetedProject.todoList.forEach((todo) => {
     const todoItem = document.createElement('div');
     const todoItemLine = document.createElement('div');
     const todoItemLeft = document.createElement('div');
@@ -109,7 +108,7 @@ const renderTodos = () => {
     todoDueDate.textContent = todo.dueDate;
     todoItemRight.appendChild(todoDueDate);
 
-    editTodo(cnt);
+    editTodo(targetedProject, cnt);
 
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('btn', 'btn-danger', 'py-0', 'mx-2');

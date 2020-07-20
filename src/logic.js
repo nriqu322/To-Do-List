@@ -9,6 +9,14 @@ function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(projectList));
 }
 
+const store = (project) => {
+  const storageArray = [];
+  for (let i = 0; i < project.todoList.length; i += 1) {
+    storageArray.push([i.title, i.description, i.dueDate, i.priority, i.isCheked]);
+  }
+  localStorage.setItem(project.title, JSON.stringify(storageArray));
+};
+
 const createProject = (title) => {
   const newProject = Project(title);
   projectList.push(newProject);
@@ -40,11 +48,11 @@ const removeProject = () => {
 
 const createTodo = (title, description, dueDate, priority, project) => {
   const newTodo = Todo(title, description, dueDate, priority);
-  project.addTodo(newTodo);
+  project.todoList.push(newTodo);
   save();
 };
 
-const editTodo = (id) => {
+const editTodo = (project, id) => {
   const todoTitle = document.getElementById(`todo-item-title-${id}`);
   todoTitle.addEventListener('click', () => {
     const todoItemLeft = document.getElementById(`todo-item-left-${id}`);
@@ -58,6 +66,7 @@ const editTodo = (id) => {
         if (todoEditTitle.value !== '') {
           todoTitle.textContent = todoEditTitle.value;
           todoEditTitle.remove();
+          store(project);
           save();
         }
       }
@@ -77,6 +86,7 @@ const editTodo = (id) => {
         if (todoEditDesc.value !== '') {
           todoDesc.textContent = todoEditDesc.value;
           todoEditDesc.remove();
+          store(project);
           save();
         }
       }
@@ -112,6 +122,7 @@ const editTodo = (id) => {
             todoPrior.classList.add('low');
           }
           todoEditPrior.remove();
+          store(project);
           save();
         }
       }
@@ -131,6 +142,7 @@ const editTodo = (id) => {
         if (todoEditDueDate.value !== '') {
           todoDueDate.textContent = todoEditDueDate.value;
           todoEditDueDate.remove();
+          store(project);
           save();
         }
       }
