@@ -103,6 +103,14 @@ const editTodo = (id) => {
       if (e.keyCode === 13) {
         if (todoEditPrior.value !== '') {
           todoPrior.textContent = todoEditPrior.value;
+          todoPrior.classList.remove('high', 'medium', 'low');
+          if (todoPrior.textContent.toLowerCase() === 'high') {
+            todoPrior.classList.add('high');
+          } else if (todoPrior.textContent.toLowerCase() === 'medium') {
+            todoPrior.classList.add('medium');
+          } else {
+            todoPrior.classList.add('low');
+          }
           todoEditPrior.remove();
           save();
         }

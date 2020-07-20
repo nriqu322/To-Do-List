@@ -79,6 +79,7 @@ const renderTodos = () => {
     todoPrior.classList.add('todo-item-priority', 'px-2', 'mx-2');
     todoPrior.id = `todo-item-priority-${cnt}`;
     todoPrior.textContent = todo.priority;
+    todoPrior.classList.remove('high', 'medium', 'low');
     if (todoPrior.textContent.toLowerCase() === 'high') {
       todoPrior.classList.add('high');
     } else if (todoPrior.textContent.toLowerCase() === 'medium') {
