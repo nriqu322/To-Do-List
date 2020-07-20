@@ -1,6 +1,3 @@
-// import project from "./projects";
-// import createProject from './logic';
-
 const renderLayout = () => {
   const content = document.querySelector('#content');
   const header = document.createElement('header');

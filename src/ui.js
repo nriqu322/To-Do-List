@@ -1,11 +1,6 @@
 import { createProject, createTodo, projectList } from './logic';
 import { renderProjects, renderTodos } from './display';
 
-// const STORAGE_SELECT_KEY = 'project.listSelected';
-// let projectIdSelected = JSON.parse(localStorage.getItem(STORAGE_SELECT_KEY));
-// let projectIdSelected;
-// let selectedProject = '1595269370751';
-
 let targetedProject;
 
 const selectProject = () => {

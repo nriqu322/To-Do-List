@@ -22,8 +22,5 @@ if (projectList.length === 0) {
 renderProjects();
 selectProject();
 addProject();
-
 removeProject();
-
 addTodos();
-// renderTodos(projectList[0].id);

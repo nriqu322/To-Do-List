@@ -1,6 +1,5 @@
 import Project from './projects';
 import Todo from './todo';
-// import { renderTodos } from './display';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -9,22 +8,12 @@ function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(projectList));
 }
 
-const store = (project) => {
-  const storageArray = [];
-  for (let i = 0; i < project.todoList.length; i += 1) {
-    storageArray.push([i.title, i.description, i.dueDate, i.priority, i.isCheked]);
-  }
-  localStorage.setItem(project.title, JSON.stringify(storageArray));
-};
-
 const createProject = (title) => {
   const newProject = Project(title);
   projectList.push(newProject);
-  // if (projectList.length > 1) {
-  //   document.getElementsByClassName('project').lasChild.classList = 'active-project';
-  // }
   save();
 };
+
 const deleteTodo = (project, id) => {
   const deleteBtn = document.getElementById(`delete-btn-${id}`);
   const todoItem = document.getElementById(`todo-item-${id}`);
@@ -34,7 +23,6 @@ const deleteTodo = (project, id) => {
     save();
   });
 };
-
 
 const removeProject = () => {
   const getDeleteBtn = document.querySelector('.delete-btn');
@@ -76,7 +64,6 @@ const editTodo = (project, id) => {
         if (todoEditTitle.value !== '') {
           todoTitle.textContent = todoEditTitle.value;
           todoEditTitle.remove();
-          store(project);
           save();
         }
       }
@@ -96,7 +83,6 @@ const editTodo = (project, id) => {
         if (todoEditDesc.value !== '') {
           todoDesc.textContent = todoEditDesc.value;
           todoEditDesc.remove();
-          store(project);
           save();
         }
       }
@@ -132,7 +118,6 @@ const editTodo = (project, id) => {
             todoPrior.classList.add('low');
           }
           todoEditPrior.remove();
-          store(project);
           save();
         }
       }
@@ -152,7 +137,6 @@ const editTodo = (project, id) => {
         if (todoEditDueDate.value !== '') {
           todoDueDate.textContent = todoEditDueDate.value;
           todoEditDueDate.remove();
-          store(project);
           save();
         }
       }

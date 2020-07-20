@@ -25,8 +25,6 @@ const renderTodos = (targetedProject) => {
   const todoItemContainer = document.querySelector('.todo-item-container');
   const newTodoContainer = document.querySelector('.new-todo-container');
   clearElement(todoItemContainer);
-  // const activeProject = document.querySelector('.active-project');
-
 
   const titleProject = document.createElement('h2');
   titleProject.classList.add('title-project');
@@ -117,10 +115,6 @@ const renderTodos = (targetedProject) => {
     todoItemRight.appendChild(deleteBtn);
 
     deleteTodo(targetedProject, cnt);
-    // deleteBtn.addEventListener('click', () => {
-    //   todoItem.remove();
-    //   store(targetedProject);
-    // });
 
     cnt += 1;
   });
