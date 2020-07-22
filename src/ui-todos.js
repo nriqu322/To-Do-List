@@ -1,4 +1,5 @@
 import { createTodo, projectList, save } from './logic';
+// eslint-disable-next-line import/no-cycle
 import { renderTodos } from './display';
 
 let targetedProject;

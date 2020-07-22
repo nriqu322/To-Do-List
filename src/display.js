@@ -1,4 +1,5 @@
 import { projectList } from './logic';
+// eslint-disable-next-line import/no-cycle
 import { editTodo, deleteTodo } from './ui-todos';
 
 const renderProjects = () => {
