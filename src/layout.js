@@ -55,23 +55,26 @@ const renderLayout = () => {
   newTodoCont.style.display = 'none';
   todoContainer.appendChild(newTodoCont);
 
-  const newTodo = document.createElement('div');
+  const newTodo = document.createElement('form');
   newTodo.classList.add('new-todo', 'form-group', 'd-flex', 'mx-auto', 'p-3');
   const todoItemTitle = document.createElement('input');
   todoItemTitle.classList.add('todo-input-title', 'form-control');
   todoItemTitle.id = 'todo-item-title';
   todoItemTitle.setAttribute('type', 'text');
   todoItemTitle.placeholder = 'New todo...';
+  todoItemTitle.required = true;
   newTodo.appendChild(todoItemTitle);
 
   const todoItemDescription = document.createElement('input');
   todoItemDescription.classList.add('todo-input-descrip', 'form-control');
   todoItemDescription.placeholder = 'Add description...';
+  todoItemDescription.required = true;
   newTodo.appendChild(todoItemDescription);
 
   const todoItemDueDate = document.createElement('input');
   todoItemDueDate.setAttribute('type', 'date');
   todoItemDueDate.classList.add('todo-input-date', 'form-control');
+  todoItemDueDate.required = true;
   newTodo.appendChild(todoItemDueDate);
 
   const todoItemPriority = document.createElement('select');
@@ -89,10 +92,11 @@ const renderLayout = () => {
 
   newTodoCont.appendChild(newTodo);
 
-  const addTodoBtn = document.createElement('button');
+  const addTodoBtn = document.createElement('input');
+  addTodoBtn.setAttribute('type', 'submit');
   addTodoBtn.classList.add('add-todo-btn', 'btn-success', 'px-3');
   addTodoBtn.id = 'add-todo-btn';
-  addTodoBtn.textContent = 'Add';
+  // addTodoBtn.value = 'Add';
   newTodo.appendChild(addTodoBtn);
 };
 

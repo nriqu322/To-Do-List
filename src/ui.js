@@ -29,7 +29,7 @@ const addTodos = () => {
 
   document.addEventListener('click', (e) => {
     if (e.target && e.target.id === 'add-todo-btn') {
-      if (inputTodoTitle.value !== '') {
+      if (inputTodoTitle.value !== '' && inputTodoDesc.value !== '' && inputTodoDueDate.value !== '') {
         createTodo(
           inputTodoTitle.value,
           inputTodoDesc.value,
