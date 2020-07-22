@@ -1,6 +1,6 @@
-import { createTodo, projectList, save } from './logic';
+import { createTodo, projectList, save } from '../logic';
 // eslint-disable-next-line import/no-cycle
-import { renderTodos } from './display';
+import { renderTodos } from '../domManipulation/display';
 
 let targetedProject;
 

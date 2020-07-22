@@ -1,5 +1,5 @@
-import Project from './projects';
-import Todo from './todo';
+import Project from './model/projects';
+import Todo from './model/todo';
 
 const STORAGE_KEY = 'project.list';
 const projectList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];

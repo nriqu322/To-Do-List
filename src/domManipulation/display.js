@@ -1,6 +1,6 @@
-import { projectList } from './logic';
+import { projectList } from '../logic';
 // eslint-disable-next-line import/no-cycle
-import { editTodo, deleteTodo } from './ui-todos';
+import { editTodo, deleteTodo } from '../ui/ui-todos';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');

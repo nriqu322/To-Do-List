@@ -1,9 +1,9 @@
 import './style.css';
-import renderLayout from './layout';
-import { renderProjects, renderTodos } from './display';
+import renderLayout from './domManipulation/layout';
+import { renderProjects, renderTodos } from './domManipulation/display';
 import { createProject, createTodo, projectList } from './logic';
-import { addProject, removeProject } from './ui-projects';
-import { addTodos, selectProject } from './ui-todos';
+import { addProject, removeProject } from './ui/ui-projects';
+import { addTodos, selectProject } from './ui/ui-todos';
 
 renderLayout();
 

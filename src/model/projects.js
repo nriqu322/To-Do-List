@@ -1,6 +1,5 @@
 const Project = (title) => {
   const todoList = [];
-
   const id = Date.now().toString();
 
   return {

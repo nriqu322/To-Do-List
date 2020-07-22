@@ -1,7 +1,7 @@
 import {
   createProject, projectList, save,
-} from './logic';
-import { renderProjects } from './display';
+} from '../logic';
+import { renderProjects } from '../domManipulation/display';
 import { selectProject } from './ui-todos';
 
 const addProject = () => {
@@ -13,6 +13,7 @@ const addProject = () => {
         createProject(inputProject.value);
         inputProject.value = '';
         renderProjects();
+        selectProject();
       }
     }
   });
