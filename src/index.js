@@ -1,10 +1,9 @@
 import './style.css';
 import renderLayout from './layout';
 import { renderProjects, renderTodos } from './display';
-import {
-  createProject, removeProject, createTodo, projectList,
-} from './logic';
-import { addProject, selectProject, addTodos } from './ui';
+import { createProject, createTodo, projectList } from './logic';
+import { addProject, removeProject } from './ui-projects';
+import { addTodos, selectProject } from './ui-todos';
 
 renderLayout();
 
@@ -22,6 +21,6 @@ if (projectList.length === 0) {
 renderProjects();
 selectProject();
 addProject();
+renderTodos(projectList[0]);
 removeProject();
 addTodos();
-renderTodos(projectList[0]);

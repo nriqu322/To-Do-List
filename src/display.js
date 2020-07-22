@@ -1,4 +1,5 @@
-import { projectList, editTodo, deleteTodo } from './logic';
+import { projectList } from './logic';
+import { editTodo, deleteTodo } from './ui-todos';
 
 const renderProjects = () => {
   const leftMenu = document.querySelector('.left-menu');
@@ -106,7 +107,7 @@ const renderTodos = (targetedProject) => {
     todoDueDate.textContent = todo.dueDate;
     todoItemRight.appendChild(todoDueDate);
 
-    editTodo(targetedProject, cnt);
+    editTodo(cnt);
 
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('btn', 'btn-danger', 'py-0', 'mx-2');
@@ -115,7 +116,7 @@ const renderTodos = (targetedProject) => {
     deleteBtn.style.visibility = 'hidden';
     todoItemRight.appendChild(deleteBtn);
 
-    deleteTodo(targetedProject, cnt);
+    deleteTodo(cnt);
 
     todoItem.addEventListener('mouseenter', () => {
       deleteBtn.style.visibility = '';
@@ -124,7 +125,6 @@ const renderTodos = (targetedProject) => {
     todoItem.addEventListener('mouseleave', () => {
       deleteBtn.style.visibility = 'hidden';
     });
-
     cnt += 1;
   });
 };
