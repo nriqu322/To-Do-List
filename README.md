@@ -25,7 +25,7 @@ This is a Todo List where you can create a new project and add taks.
 * [Bootstrap](https://getbootstrap.com/)
 
 ## Live Version
-Check the live version [here](https://rawcdn.githack.com/nriqu322/To-Do-List/84b0cb191e92283604c6a729826d3ead8eccb73a/dist/index.html).
+Check the live version [here](https://rawcdn.githack.com/nriqu322/To-Do-List/c313d2e83afc6100a1d44504276bc45728c038d5/dist/index.html).
 
 ![Sreenshot](src/images/screenshot.png)
 
