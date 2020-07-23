@@ -1,4 +1,4 @@
-# Javascript Restaurant Page
+# Javascript ToDo List
   
 ## About
 This project is part of the Microverse Curriculum projects. It is a Javascript web application to practice OOP principles and webpack.
